@@ -1,2 +1,2 @@
-# js-testing-practice
-Practice using TDD in JS 
+# Testing Practice
+Practice TDD in JS using vitest
