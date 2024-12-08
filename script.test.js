@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { capitalize, reverseString, caesarCipher } from './script';
+import { capitalize, reverseString, caesarCipher, analyzeArray } from './script';
 import { Calculator } from './script';
 
 describe('Capitalize', () => {
@@ -56,6 +56,17 @@ describe('Caesar Cipher', () => {
   });
 
   it('should return non-alphabet characters', () => {
-    expect(caesarCipher('abc$', 2)).toEqual('cde$')
-  })
+    expect(caesarCipher('abc$', 2)).toEqual('cde$');
+  });
+});
+
+describe('Analyze Array', () => {
+  it('should return an object with avg, min, max, length props', () => {
+    expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+      average: 4,
+      min: 1,
+      max: 8,
+      length: 6,
+    });
+  });
 });

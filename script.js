@@ -58,3 +58,12 @@ export function caesarCipher(string, shift) {
 
   return newWord.join('');
 }
+
+export function analyzeArray(array) {
+  return {
+    average: array.reduce((acc, cur) => acc + cur) / array.length,
+    min: Math.min(...array),
+    max: Math.max(...array),
+    length: array.length,
+  };
+}
