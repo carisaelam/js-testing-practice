@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { capitalize, reverseString } from './script';
+import { capitalize, reverseString, caesarCipher } from './script';
 import { Calculator } from './script';
 
 describe('Capitalize', () => {
@@ -40,4 +40,22 @@ describe('Calculator', () => {
       expect(calculator.divide(10, 2)).toEqual(5);
     });
   });
+});
+
+describe('Caesar Cipher', () => {
+  it('should shift letters by shift factor', () => {
+    expect(caesarCipher('aac', 1)).toEqual('bbd');
+  });
+
+  it('should wrap around', () => {
+    expect(caesarCipher('z', 1)).toEqual('a');
+  });
+
+  it('should work for upper and lower case', () => {
+    expect(caesarCipher('AzB', 1)).toEqual('BaC');
+  });
+
+  it('should return non-alphabet characters', () => {
+    expect(caesarCipher('abc$', 2)).toEqual('cde$')
+  })
 });
